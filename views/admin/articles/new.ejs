@@ -8,13 +8,13 @@
             <h2>Novo artigo</h2>
         </div>
         <div class="card-bodu">
-            <form action="/categories/save" method="POST">
+            <form action="/articles/save" method="POST">
                 <input class="form-control" type="text" name="title" placeholder="Defina o titulo do artigo"> <br>
                 <textarea name="body" class="form-control" placeholder="Escreva o artigo aqui!" id="article" cols="30" rows="10"></textarea><br>
                 <label for="">Categoria</label>
                 <select class="form-control" name="category" id="">
                     <% categories.forEach((category) => {%>
-                        <option value="<%= categories.id %>"><%= category.title %></option>
+                        <option value="<%= category.id %>"><%= category.title %></option>
                     <% }) %>
                 </select>
                 <br>
