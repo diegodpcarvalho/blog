@@ -25,13 +25,19 @@ connection
         console.log (error);
     })
 
+app.get("/", (req, res) => {
+
+    Article.findAll().then(articles =>{
+        res.render("index", {articles: articles})
+    })
+   
+})
+
 
 app.use("/",categoriesControler);
 app.use("/", articlesControler);
 
-app.get("/", (req, res) => {
-    res.render("index");    
-})
+
 
 app.listen(8080, () => {
     console.log("O servidor esta rodando")

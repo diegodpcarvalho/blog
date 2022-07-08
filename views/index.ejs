@@ -1,7 +1,30 @@
 <%- include ('partials/header.ejs'); %>
-
+<%- include ('partials/homenavbar.ejs') %>
+<link rel="stylesheet" href="../public/css/style.css">
 <body>
-   <h1>ola mundo</h1> 
+   <div class="container">
+
+      <div class="jumbotron form-control bg-light ">
+         <h1 class="display-4">Bem vindo</h1>
+         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+         <hr class="my-4">
+         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+
+</div>
+      <% articles.forEach(article =>{ %>
+         <div class="card">
+            <div class="card-header">
+               <h2><%= article.title %></h2>
+            </div>
+            <div class="card-body">
+               <a href="" class="btn btn-success">Ler artigo</a>
+            </div>
+         </div>
+         <br>
+      <% }) %>
+      
+   </div> 
 </body>
 
 <%- include ('partials/footer.ejs'); %>
